@@ -1,0 +1,11 @@
+name: cv-assignment2
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - pip
+  - numpy>=1.21.0
+  - pip:
+    - opencv-python>=4.5.0
+    - opencv-contrib-python>=4.5.0

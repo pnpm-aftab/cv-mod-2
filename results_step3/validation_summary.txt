@@ -1,0 +1,38 @@
+======================================================================
+VALIDATION EXPERIMENT SUMMARY REPORT
+Module 2 Assignment - CSc 8830: Computer Vision
+======================================================================
+
+Number of tests: 1
+Date: 2026-02-01 21:46:57
+
+----------------------------------------------------------------------
+TEST 1: IMG_1984.jpeg
+----------------------------------------------------------------------
+Distance: 2.35 meters
+
+Ground Truth:
+  Width: 0.33 meters
+  Height: 0.25 meters
+  Area: 0.08 sq meters
+
+Measured:
+  Width: 0.47 meters
+  Height: 0.36 meters
+  Area: 0.17 sq meters
+
+Errors:
+  Width: 0.14 meters (43.62%)
+  Height: 0.11 meters (42.46%)
+  Area: 0.09 sq meters (104.61%)
+
+Status: FAIL
+
+======================================================================
+OVERALL STATISTICS
+======================================================================
+Average Width Error: 43.62%
+Average Height Error: 42.46%
+Average Area Error: 104.61%
+Tests Passed: 0/1
+Success Rate: 0.0%

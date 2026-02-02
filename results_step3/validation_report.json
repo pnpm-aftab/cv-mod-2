@@ -1,0 +1,29 @@
+[
+  {
+    "image_path": "test_images_step_3/IMG_1984.jpeg",
+    "distance": 2.35,
+    "ground_truth": {
+      "width_real": 0.3302,
+      "height_real": 0.254,
+      "area_real": 0.0838708,
+      "units": "meters"
+    },
+    "measured": {
+      "width_pixels": 565.6907958984375,
+      "height_pixels": 431.535400390625,
+      "width_real": 0.4742487342264742,
+      "height_real": 0.36184494248329474,
+      "area_real": 0.17160450595895388,
+      "distance": 2.35
+    },
+    "errors": {
+      "width_abs": 0.14404873422647418,
+      "width_pct": 43.624692376279285,
+      "height_abs": 0.10784494248329474,
+      "height_pct": 42.458638772950685,
+      "area_abs": 0.08773370595895388,
+      "area_pct": 104.60578170108535
+    },
+    "timestamp": "2026-02-01T21:46:57.325033"
+  }
+]
