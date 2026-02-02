@@ -32,14 +32,9 @@ from step_2 import ObjectMeasurement
 
 
 class ValidationExperiment:
-    def __init__(self, calibration_file="camera_calibration.pkl", verbose: bool = False):
-        """
-        Initialize validation experiment
-        
-        Args:
-            calibration_file: Path to camera calibration data
-        """
-        self.measurer = ObjectMeasurement(calibration_file, verbose=verbose)
+    def __init__(self, verbose: bool = False):
+        """Initialize validation experiment."""
+        self.measurer = ObjectMeasurement()
         self.results = []
         self.verbose = verbose
 
@@ -67,7 +62,7 @@ class ValidationExperiment:
         }
     
     def run_single_validation(self, image_path, distance, ground_truth, 
-                              visualize=False, save_result=True):
+                              save_result=True):
         """
         Run a single validation experiment
         
@@ -75,7 +70,6 @@ class ValidationExperiment:
             image_path: Path to test image
             distance: Distance from camera to object (must be > 2 meters)
             ground_truth: Dictionary with actual object dimensions
-            visualize: Show detection results
             save_result: Save result image
             
         Returns:
@@ -94,7 +88,7 @@ class ValidationExperiment:
         measurement = self.measurer.measure_object_in_image(
             image_path=image_path,
             known_distance=distance,
-            visualize=visualize,
+            unit_label=ground_truth["units"],
             save_result=save_result,
             output_dir="results_step3",
         )
@@ -140,7 +134,7 @@ class ValidationExperiment:
         Args:
             result: Validation result dictionary
         """
-        print("Validation results:")
+        print("\nValidation:")
         print(
             f"- Ground truth (W x H): "
             f"{result['ground_truth']['width_real']:.2f} x {result['ground_truth']['height_real']:.2f} "
@@ -271,11 +265,11 @@ def main():
     """
     Main validation experiment function
     """
-    print("STEP 3: VALIDATION EXPERIMENT")
+    print("STEP 3: VALIDATION EXPERIMENT\n")
     
     # Initialize validation experiment
     try:
-        validator = ValidationExperiment("camera_calibration.pkl", verbose=False)
+        validator = ValidationExperiment(verbose=False)
     except FileNotFoundError:
         print("ERROR: camera_calibration.pkl not found.")
         print("Run Step 1 (camera calibration) first.")
@@ -318,10 +312,7 @@ def main():
         units=TEST_OBJECT_UNITS
     )
     
-    print(
-        f"Validation config: object {TEST_OBJECT_WIDTH} x {TEST_OBJECT_HEIGHT} {TEST_OBJECT_UNITS}, "
-        f"distance {CAMERA_DISTANCE} {TEST_OBJECT_UNITS}"
-    )
+    print(f"Config: object {TEST_OBJECT_WIDTH}x{TEST_OBJECT_HEIGHT} {TEST_OBJECT_UNITS}, distance {CAMERA_DISTANCE} {TEST_OBJECT_UNITS}\n")
     
     # Check if test images exist
     missing_images = [p for p in TEST_IMAGE_PATHS if not os.path.exists(p)]
@@ -338,7 +329,6 @@ def main():
             image_path=image_path,
             distance=CAMERA_DISTANCE,
             ground_truth=ground_truth,
-            visualize=False,  # Set to True to see corner detection
             save_result=True
         )
         

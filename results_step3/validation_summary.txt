@@ -4,7 +4,7 @@ Module 2 Assignment - CSc 8830: Computer Vision
 ======================================================================
 
 Number of tests: 1
-Date: 2026-02-01 21:46:57
+Date: 2026-02-02 11:07:52
 
 ----------------------------------------------------------------------
 TEST 1: IMG_1984.jpeg
@@ -22,17 +22,17 @@ Measured:
   Area: 0.17 sq meters
 
 Errors:
-  Width: 0.14 meters (43.62%)
-  Height: 0.11 meters (42.46%)
-  Area: 0.09 sq meters (104.61%)
+  Width: 0.14 meters (43.03%)
+  Height: 0.10 meters (40.90%)
+  Area: 0.09 sq meters (101.53%)
 
 Status: FAIL
 
 ======================================================================
 OVERALL STATISTICS
 ======================================================================
-Average Width Error: 43.62%
-Average Height Error: 42.46%
-Average Area Error: 104.61%
+Average Width Error: 43.03%
+Average Height Error: 40.90%
+Average Area Error: 101.53%
 Tests Passed: 0/1
 Success Rate: 0.0%
